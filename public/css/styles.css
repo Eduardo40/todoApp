@@ -1,3 +1,10 @@
 .btn-danger {
     margin: 0px 1rem;
 }
+
+.alert {
+    position: fixed;
+    margin: 0 auto;
+    left: 43%;
+    top: 29px;
+}

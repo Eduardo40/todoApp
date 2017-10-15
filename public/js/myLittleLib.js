@@ -5,6 +5,7 @@
         return new Promise((res,rej)=>{
             let xhr = new XMLHttpRequest();
             xhr.open(method,url,true);
+            //Check if there is anyting to send (POST)
             if(toSend){
                 xhr.setRequestHeader("Content-type", "application/json");
             }

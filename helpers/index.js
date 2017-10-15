@@ -55,7 +55,7 @@ exports.changeTodo = (req, res)=>{
 
 exports.deleteTodo = (req, res)=>{
     Todos.findByIdAndRemove(req.params.id).then((todo)=>{
-        return res.json({success:true,message:"Succesfuly deleted a todo"});
+        return res.json({success:true,message:"Todo Deleted!"});
     }).catch((err)=>{
         res.json({success:false,message:err.message});
         throw err;
