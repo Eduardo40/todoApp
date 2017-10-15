@@ -52,5 +52,20 @@
         });
     }
 
+    lib.showMessage = function(messageText,cssClass){
+        let alertPlace = document.querySelector("#alertMessagePlace");
+        alertPlace.innerHTML = "";
+        let html  = `
+        <div class="alert alert-${cssClass}" role="alert">
+            ${messageText}
+        </div>
+        `;
+        alertPlace.innerHTML += html;
+        let alert = document.querySelector(".alert");
+        setTimeout(function(){
+            alert.style.display = "none";
+        },3000)
+    }
+
     global.helpers = lib;
 }(this));
