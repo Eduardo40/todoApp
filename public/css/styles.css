@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 ul {
-   width: 100%;
+    width: 100%;
 }
 
 .crossed {
     text-decoration: line-through;
     color: gray;
 }
+
 
 /*Modify exsisting Bootstrap classes*/
 
@@ -20,6 +26,6 @@ ul {
 .alert {
     position: fixed;
     margin: 0 auto;
-    left: 43%;
-    top: 29px;
+    left: 44%;
+    top: 25px;
 }
