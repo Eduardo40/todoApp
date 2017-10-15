@@ -23,7 +23,20 @@
         .then((data)=>{
             let html = "";
             data.forEach(function(todo) {
-                html += `<li class="list-group-item">${todo.name} <button class="btn btn-danger btn-sm float-right" data-id="${todo._id}">Delete</button> </li>`;
+                if(todo.completed){
+                    html += `
+                    <li class="list-group-item crossed">
+                        ${todo.name} 
+                        <button class="btn btn-danger btn-sm float-right" data-id="${todo._id}">Delete</button> 
+                    </li>`;    
+                }else{
+                    html += `
+                    <li class="list-group-item">
+                        ${todo.name} 
+                        <button class="btn btn-danger btn-sm float-right" data-id="${todo._id}">Delete</button> 
+                        <button class="btn btn-success btn-sm float-right" id="btnComplete" data-id="${todo._id}">Complete</button>
+                    </li>`;
+                }
             });
             document.querySelector("#todoDisplay").innerHTML = html;
         }).catch((err)=>{
@@ -50,6 +63,17 @@
             }).catch(err=> {
                 console.log(err.message);
             })
+        });
+    }
+
+    lib.completeTodo = function(todo_id){
+        return new Promise((resolve, reject)=>{
+            this.sendRequest("PUT",`http://localhost:3000/api/todos/${todo_id}`)
+            .then(successMessage => {
+                resolve(successMessage);
+            }).catch(err => {
+                reject(err);
+            });
         });
     }
 

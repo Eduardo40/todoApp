@@ -42,4 +42,17 @@ document.querySelector("body").addEventListener("click",function(e){
     }
 })
 
+document.querySelector("body").addEventListener("click",function(e){
+    if(e.target.classList[1] === "btn-success"){
+        const id = e.target.dataset.id;
+        lib.completeTodo(id)
+        .then(response =>{
+            lib.showMessage(response.message,"success");
+            lib.displayTodos()
+        })
+        .catch(err=>{
+            lib.showMessage(err.message,"danger");
+        })
+    }
+})
 }(null,window,helpers));

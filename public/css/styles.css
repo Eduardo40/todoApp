@@ -1,5 +1,20 @@
+ul {
+   width: 100%;
+}
+
+.crossed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/*Modify exsisting Bootstrap classes*/
+
+.crossed.list-group-item:hover {
+    text-decoration: line-through;
+}
+
 .btn-danger {
-    margin: 0px 1rem;
+    margin: 0px 0.2rem;
 }
 
 .alert {
