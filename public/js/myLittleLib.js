@@ -48,36 +48,16 @@
     }
 
     lib.addTodo = function (todoName, url) {
-        return new Promise((resolve, reject) => {
-            this.sendRequest("POST", url, todoName)
-                .then(response => {
-                    resolve(response);
-                }).catch(err => {
-                    reject(err);
-                })
-        })
+        return this.sendRequest("POST", url, todoName)
     }
 
+
     lib.deleteTodo = function (todo_id) {
-        return new Promise((resolve, reject) => {
-            this.sendRequest("DELETE", `http://localhost:3000/api/todos/${todo_id}`)
-                .then(successMessage => {
-                    resolve(successMessage.message);
-                }).catch(err => {
-                    console.log(err.message);
-                })
-        });
+        return this.sendRequest("DELETE", `http://localhost:3000/api/todos/${todo_id}`)
     }
 
     lib.completeTodo = function (todo_id) {
-        return new Promise((resolve, reject) => {
-            this.sendRequest("PUT", `http://localhost:3000/api/todos/${todo_id}`)
-                .then(successMessage => {
-                    resolve(successMessage);
-                }).catch(err => {
-                    reject(err);
-                });
-        });
+        return this.sendRequest("PUT", `http://localhost:3000/api/todos/${todo_id}`)
     }
 
     lib.showMessage = function (messageText, cssClass) {

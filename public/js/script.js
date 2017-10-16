@@ -34,8 +34,8 @@
         if (e.target.classList[1] === "btn-danger") {
             const id = e.target.dataset.id;
             my$.deleteTodo(id)
-                .then(message => {
-                    my$.showMessage(message, "success");
+                .then(response => {
+                    my$.showMessage(response.message, "success");
                     my$.displayTodos()
                 })
                 .catch(err => {
