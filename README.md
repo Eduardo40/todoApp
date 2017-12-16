@@ -1,6 +1,8 @@
 # todoApp
-made with nodejs, MongoDB, vanilla javascript
+Made with NodeJS, MongoDB, JavaScript
 ## 1.Downlaod
-## 2.npm or pnpm(better) install
-## 4.node app.js
-## 3.open in browser on localhost:3000/
+```
+## 2.npm or install
+## 4.npm start
+```
+## 3.Open in browser on localhost:3000
